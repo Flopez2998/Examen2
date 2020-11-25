@@ -36,4 +36,16 @@ router.get('/one/:id', async (req, res)=>{
   }
 });
 
+router.post('/new', async (req, res)=>{
+  try{
+    let { nombre, correo, telefono, producto, formaPago, estadoOrd} = req.body;
+    
+    var rslt = await mdbProductModel.addOne({ nombre, correo, telefono, producto, formaPago, estadoOrd}); 
+    res.status(200).json(rslt);
+  }catch(ex){
+    console.log(ex);
+    res.status(500).json({ "msg": "Algo Paso Mal." });
+  }
+});
+
 module.exports = router;

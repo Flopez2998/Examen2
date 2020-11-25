@@ -44,6 +44,16 @@ class ProductsModel{
         }
     }
 
+    async addOne(document) {
+        try{
+          var result = await this.collection.insertOne(document);
+          return result;
+        }catch(ex){
+          throw(ex);
+        }
+      }
+
+
    
 }
 module.exports = ProductsModel;
