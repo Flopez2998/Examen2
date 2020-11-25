@@ -48,4 +48,16 @@ router.post('/new', async (req, res)=>{
   }
 });
 
+router.put('/upd/:id', async (req, res)=>{
+  try{
+    let {id} = req.params;
+    //id = Number(id);
+    let {estadoOrd} = req.body;
+    let rslt = await mdbProductModel.updateById(id, estadoOrd);
+    res.status(200).json(rslt);
+  }catch(ex){
+    console.log(ex);
+    res.status(500).json({ "msg": "Algo Paso Mal." });
+  }
+});
 module.exports = router;
