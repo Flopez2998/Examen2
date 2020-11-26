@@ -1,6 +1,6 @@
 //Obtengo nuestra base de datos conectada
 const { Timestamp } = require('mongodb');
-const db = require('../db');
+//const db = require('../db');
 var MongoDB = require('../dbm');
 var ObjectID = require('mongodb').ObjectID;
 
@@ -65,5 +65,7 @@ class ProductsModel{
         }
       }
 
+
+   
 }
 module.exports = ProductsModel;

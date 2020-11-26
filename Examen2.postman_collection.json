@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "22a434a8-487c-4494-ae94-6ba5a7141d57",
+		"name": "Examen2",
+		"description": "Examen de Seminario de Software Fernando Lopez",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Metodo Get(Extraer ordnes)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				},
+				"description": "seminario"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/productos/new",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "Fernando",
+							"type": "text"
+						},
+						{
+							"key": "correo",
+							"value": "fd1998@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "telefono",
+							"value": "453645332",
+							"type": "text"
+						},
+						{
+							"key": "producto",
+							"value": "Laptop",
+							"type": "text"
+						},
+						{
+							"key": "formaPago",
+							"value": "Efectivo",
+							"type": "text"
+						},
+						{
+							"key": "estadoOrd",
+							"value": "Activo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/productos/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productos",
+						"new"
+					]
+				},
+				"description": "Metodo post (insertar una nueva orden)"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/productos/one/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/productos/one/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productos",
+						"one",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5fbed73cf74ff81078081165"
+						}
+					]
+				},
+				"description": "Metodo get (extraer por id)"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/productos/upd/:id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "estadoOrd",
+							"value": "Inactivo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/productos/upd/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productos",
+						"upd",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5fbed73cf74ff81078081165"
+						}
+					]
+				},
+				"description": "Metodo put (actualizar el esatdo de una orden por medio del id)"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

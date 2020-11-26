@@ -11,9 +11,31 @@ var http = require('http');
 /**
  * Get port from environment and store in Express.
  */
+var MongoDB = require('../models/dbm');
+const { start } = require('repl');
+
+//funcion asincronica con una funcion gorda para conectar la base de datos
+(async ()=>{
+  try{
+   var db = await MongoDB.getDb();
+   if(db){
+      console.log("Conectado a la base de datos");
+      start();
+   }
+  }catch(ex){
+   console.log(ex);
+   console.exit();
+  }
+  })();
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+
+//Iniciando Base de datos
+
+  
+
+
 
 /**
  * Create HTTP server.
